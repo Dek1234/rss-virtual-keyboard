@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    margin: 30px;
+}
+
+.github-link {
+    text-align: center;
+    margin-top: 30px;
+    display: block;
+}
+
+.virtual-keyboard_textarea {
+    height: 200px;
+    width: 500px;
+    margin: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 1px solid $color-white;
+    border-radius: 1rem;
+    box-shadow: 0px 32px 60px -29px rgba(0, 0, 0, 0.25);
+    outline: none;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.virtual-keyboard {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid $color-white;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #E9E9E9 0%, #DADADA 100%);
+    box-shadow: 0px 32px 60px -29px rgba(0, 0, 0, 0.25);
+
+    &_row {
+        display: flex;
+    }
+
+    &--caps {
+        .btn_stdkey {
+            text-transform: uppercase;
+        }
+
+        &.virtual-keyboard--shift .btn_stdkey {
+            text-transform: lowercase;
+        }
+    }
+
+    &--shift {
+        .btn_stdkey {
+            text-transform: uppercase;
+        }
+
+        .btn_altkey~.btn_stdkey {
+            display: none;
+        }
+
+        .btn_altkey {
+            color: inherit;
+            position: static;
+            font-size: 1.2rem;
+        }
+    }
+}
