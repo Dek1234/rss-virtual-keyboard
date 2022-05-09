@@ -1,0 +1,100 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: $color-text-default;
+    margin: 2px;
+    box-sizing: border-box;
+    height: $unit;
+    width: $size-1u;
+    position: relative;
+    border-radius: $btn-radius;
+    border: 1px solid transparent;
+
+    &:hover {
+        color: $color-white;
+        background: $color-bg-hovered;
+    }
+
+    &:active,
+    &--pressed {
+        transition: color 0.3s ease;
+        color: #65532f !important;
+        animation: keystroke 0.4s both;
+    }
+
+    &--default {
+        background:
+            linear-gradient(180deg, #E4E4E4 0%, #C7C7C7 100%) padding-box,
+            linear-gradient(180deg, #2e2a2a 0%, #352828 9.9%, #3a2626 100%) border-box;
+    }
+
+    &--mod {
+        background:
+        linear-gradient(180deg, #E4E4E4 0%, #C7C7C7 100%) padding-box,
+        linear-gradient(180deg, #2e2a2a 0%, #352828 9.9%, #3a2626 100%) border-box;
+    }
+
+    &--auto {
+        flex-grow: 2;
+    }
+
+    &--1_25u {
+        width: $size-1_25u + 4px;
+    }
+
+    &--1_5u {
+        width: $size-1_5u + 4px;
+    }
+
+    &--1_75u {
+        width: $size-1_75u + 4px;
+    }
+
+    &--2u {
+        width: $size-2u + 4px;
+    }
+
+    &--2_25u {
+        width: $size-2_25u + 4px;
+    }
+
+    &_defkey {
+        font-size: 1.2rem;
+    }
+
+    &_syskey {
+        font-size: 0.9rem;
+    }
+
+    &_altkey {
+        font-size: 0.8rem;
+        position: absolute;
+        left: 0.4rem;
+        top: 0.3rem;
+        color: #181616;
+    }
+
+    &_led {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #727272;
+        left: 10px;
+        top: 10px;
+    }
+}
+
+@keyframes keystroke {
+    from {
+        background-color: #BDBDBD;
+    }
+
+    to {
+        background: none;
+        background-color: rgb(123 130 135);
+        box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.5);
+    }
+}
